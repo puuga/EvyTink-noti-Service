@@ -1,0 +1,20 @@
+{
+	"name": "EvyTinkService",
+	"version": "1.0.1",
+	"description": "EvyTinkService Backend",
+	"private": true,
+	"scripts": {
+		"start": "node index.js"
+	},
+	"author": "Siwawes Wongcharoen",
+	"dependencies": {
+		"express": "^4.x",
+		"cfenv": "^1.0.x",
+		"body-parser": "^1.x",
+		"retry": "^0.x"
+	},
+	"repository": {},
+	"engines": {
+		"node": "6.x"
+	}
+}

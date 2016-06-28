@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: EvyTink Service
+  host: EvyTink-Service
+  disk_quota: 512M

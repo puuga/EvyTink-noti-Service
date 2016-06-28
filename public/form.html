@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EvyTink Service</title>
+  </head>
+  <body>
+    <h1>EvyTink Service Node.js</h1>
+    <form action="send" method="post">
+      <p>
+        <strong>App</strong>
+        <label><input type="radio" name="app" value="test"> test</label>
+        <label><input type="radio" name="app" value="EvyTink" checked> EvyTink</label>
+      </p>
+      <p>
+        <strong>Topic</strong>
+        <label><input type="radio" name="topic" value="general" checked> general</label>
+        <label><input type="radio" name="topic" value="news"> news</label>
+        <label><input type="radio" name="topic" value="promotion"> promotion</label>
+        <label><input type="radio" name="topic" value="event"> event</label>
+      </p>
+      <p>
+        <label>Title Text <input type="text" name="titleText" value="" required></label>
+      </p>
+      <p>
+        <label>Body Text <input type="text" name="bodyText" value="" required></label>
+      </p>
+      <p>
+        <strong>Sound</strong>
+        <label><input type="radio" name="sound" value="no" checked> no</label>
+        <label><input type="radio" name="sound" value="default"> default</label>
+      </p>
+      <p>
+        <input type="submit">
+      </p>
+
+    </form>
+  </body>
+</html>

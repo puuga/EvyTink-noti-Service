@@ -46,6 +46,7 @@ app.post('/send', function (req, res) {
   var titleText = req.body.titleText;
   var bodyText = req.body.bodyText;
   var sound = req.body.sound;
+  var isDebug = req.body.isDebug;
 
   console.log('topic: ' + topic);
   console.log('titleText: ' + titleText);
@@ -54,10 +55,11 @@ app.post('/send', function (req, res) {
 
   var message = {
     to: '/topics/friendly_engage', // required
-    collapse_key: 'Your update!',
+    collapse_key: 'EVYtink!',
     priority: "high",
     data: {
-        mTopic: 'friendly_engage'
+        mTopic: 'friendly_engage',
+        isDebug: isDebug
     },
     notification: {
         title: titleText,

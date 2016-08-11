@@ -45,13 +45,30 @@ app.post('/send', function (req, res) {
   var topic = req.body.topic;
   var titleText = req.body.titleText;
   var bodyText = req.body.bodyText;
+  var profileImageUrl = req.body.profileImageUrl;
   var sound = req.body.sound;
   var isDebug = req.body.isDebug;
 
   console.log('topic: ' + topic);
   console.log('titleText: ' + titleText);
   console.log('bodyText: ' + bodyText);
+  console.log('profileImageUrl: ' + profileImageUrl);
   console.log('sound: ' + sound);
+
+  // var message = {
+  //   to: '/topics/friendly_engage', // required
+  //   collapse_key: 'EVYtink!',
+  //   priority: "high",
+  //   data: {
+  //       mTopic: 'friendly_engage',
+  //       profileImageUrl: profileImageUrl,
+  //       isDebug: isDebug
+  //   },
+  //   notification: {
+  //       title: titleText,
+  //       body: bodyText
+  //   }
+  // };
 
   var message = {
     to: '/topics/friendly_engage', // required
@@ -59,9 +76,8 @@ app.post('/send', function (req, res) {
     priority: "high",
     data: {
         mTopic: 'friendly_engage',
-        isDebug: isDebug
-    },
-    notification: {
+        profileImageUrl: profileImageUrl,
+        isDebug: isDebug,
         title: titleText,
         body: bodyText
     }
@@ -88,8 +104,12 @@ app.post('/send', function (req, res) {
 
   }
 
+  // if (sound==="default") {
+  //   message.notification.sound = "default";
+  // }
+
   if (sound==="default") {
-    message.notification.sound = "default";
+    message.data.sound = "default";
   }
 
   fcm.send(message, function(err, response){
